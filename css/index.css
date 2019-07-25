@@ -91,11 +91,6 @@ h1, h2, h3, h4, h5 {
     }
 }
 
-@media screen and ( max-width: 500px ) {
-	.middle-bg {
-   }
-}
-
 p {
     font-family: 'Montserrat', sans-serif;
 }
@@ -137,19 +132,20 @@ h2 {
 nav .nav-wrapper {
 	display: flex;
     align-items: center;
-    width: 1024px;
-    margin: 0 auto;
+    width: 100%;
+    flex-direction: column;
 }
 
-@media screen and ( max-width: 800px ) {
+@media screen and ( min-width: 800px ) {
 	nav .nav-wrapper {
-        width: 100%;
+        width: 1024px;
+        margin: 0 auto;
     }
 }
 
-@media screen and ( max-width: 500px ) {
+@media screen and ( min-width: 500px ) {
 	nav .nav-wrapper {
-        flex-direction: column;
+        flex-direction: row;
    }
 }
  
@@ -177,16 +173,19 @@ nav {
 
 .overwrap {
     display: flex;
-    width: 1024px;
-    margin: 0 auto;
+    width: 100%;
+    flex-direction: column-reverse;
 }
 
-@media screen and ( max-width: 800px ) {
+@media screen and ( min-width: 800px ) {
 	.overwrap {
-        flex-direction: column-reverse;
-        width: 100%;
+        width: 1024px;
+        margin: 0 auto;
+        flex-direction: row;
     }
 }
+
+
 
 nav a {
     flex: 1;
@@ -199,15 +198,9 @@ nav a {
     font-family: 'Montserrat', sans-serif;
 }
 
-@media screen and ( max-width: 800px ) {
+@media screen and ( min-width: 800px ) {
 	nav a {
 		padding: 10px 30px;
-   }
-}
-
-@media screen and ( max-width: 500px ) {
-	nav a {
-
    }
 }
 
@@ -217,37 +210,26 @@ nav a:hover {
     mix-blend-mode: difference;
 }
 
-nav a.logo-link {
-    padding: 0;
-    margin-left: auto;
-}
-
-@media screen and ( max-width: 800px ) {
+@media screen and ( min-width: 800px ) {
 	nav a.logo-link {
-		margin-left: unset;
-   }
-}
-
-@media screen and ( max-width: 500px ) {
-	nav a.logo-link {
-        margin-left: unset;
+		padding: 0;
+        margin-left: auto;
    }
 }
 
 .hero {
     height: 570px;
-    width: 1024px;
+    width: 100%;
+    padding: 40px 0;
 	margin: 0 auto;
 	display: flex;
 	align-items: center;
-	padding-top: 80px;
 }
 
-@media screen and ( max-width: 800px ) {
+@media screen and ( min-width: 800px ) {
 	.hero {
-        width: 100%;
-        padding: 40px 0;
-        height: unset;
+        width: 1024px;
+        padding-top: 80px;
    }
 }
 
@@ -257,9 +239,13 @@ nav a.logo-link {
     vertical-align: middle;
 }
 
-@media screen and ( max-width: 800px ) {
+.hero-section:nth-child(2) {
+    display: none;
+}
+
+@media screen and ( min-width: 800px ) {
     .hero-section:nth-child(2) {
-        display: none;
+        display: block;
     }
 }
 
@@ -313,11 +299,12 @@ section.headline-section {
 .two-column  {
     border-top: 1px solid #000;
     display: flex;
+    flex-direction: column;
 }
 
-@media screen and ( max-width: 500px ) {
+@media screen and ( min-width: 500px ) {
 	.two-column {
-        flex-direction: column;
+        flex-direction: row;
    }
 }
 
@@ -328,12 +315,13 @@ section.headline-section {
 .three-column {
     border-bottom: 1px solid #000;
 	padding-bottom: 50px;
-	display: flex;
+    display: flex;
+    flex-direction: column;
 }
 
-@media screen and ( max-width: 500px ) {
+@media screen and ( min-width: 500px ) {
 	.three-column {
-        flex-direction: column;
+        flex-direction: row;
    }
 }
 
